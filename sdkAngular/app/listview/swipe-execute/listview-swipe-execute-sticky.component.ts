@@ -6,6 +6,7 @@ import { DataItemService } from "../dataItem.service";
 import { ListViewEventData, RadListView } from "nativescript-telerik-ui-pro/listview";
 import * as frameModule from "ui/frame";
 import * as utilsModule from "utils/utils";
+import { RouterExtensions } from "nativescript-angular/router";
 
 @Component({
     moduleId: module.id,
@@ -18,7 +19,7 @@ export class ListviewSwipeExecuteStickyComponent implements OnInit {
     private _dataItems: ObservableArray<DataItem>;
     private _selectedItems: string;
 
-    constructor(private _dataItemService: DataItemService) {
+    constructor(private _dataItemService: DataItemService, private routerExtensions: RouterExtensions) {
     }
 
     get dataItems(): ObservableArray<DataItem> {
@@ -59,6 +60,12 @@ export class ListviewSwipeExecuteStickyComponent implements OnInit {
     public onRightSwipeClick(args) {
         var listView = <RadListView>frameModule.topmost().currentPage.getViewById("listView");
         listView.notifySwipeToExecuteFinished();
+    }
+
+    public goBack(args) {
+        setTimeout(() => {
+            this.routerExtensions.back();
+        });
     }
 }
 // << angular-listview-swipe-execute-sticky-component

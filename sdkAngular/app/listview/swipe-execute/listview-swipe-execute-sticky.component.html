@@ -1,6 +1,8 @@
-<GridLayout orientation="vertical" exampleTitle toggleNavButton>
+
+<GridLayout orientation="vertical" rows="auto, *" exampleTitle toggleNavButton>
+    <Button (tap)="goBack()" text="Go Back"></Button>
     <!-- >> angular-listview-swipe-execute-sticky-component -->
-    <RadListView id="listView" [items]="dataItems" selectionBehavior="None" (itemTap)="onItemClick($event)" (itemSwipeProgressStarted)="onSwipeCellStarted($event)"
+    <RadListView id="listView" row="1" [items]="dataItems" selectionBehavior="None" (itemTap)="onItemClick($event)" (itemSwipeProgressStarted)="onSwipeCellStarted($event)"
         itemSwipe="true">
         <!-- << angular-listview-swipe-execute-sticky-component -->
         <template tkListItemTemplate let-item="item">

@@ -7,7 +7,7 @@ import { CALENDAR_DIRECTIVES } from 'nativescript-telerik-ui-pro/calendar/angula
 import { CHART_DIRECTIVES } from 'nativescript-telerik-ui-pro/chart/angular';
 
 // Not required imports, these are used by the nativescript-samples-angular SDK examples
-import { NativeScriptRouterModule } from "nativescript-angular/router";
+import { NativeScriptRouterModule, RouterExtensions } from "nativescript-angular/router";
 import { NativeScriptFormsModule } from "nativescript-angular/forms";
 import { NgModule } from "@angular/core";
 import { AppComponent, createRouteEntryArray, APP_ROUTES } from "./navigation/app.component";
