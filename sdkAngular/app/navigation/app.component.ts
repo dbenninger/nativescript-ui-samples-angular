@@ -32,4 +32,4 @@ export function createRouteEntryArray(components) {
   }
 }
 
-export const APP_ROUTES: Routes = [];
+export const APP_ROUTES = [];

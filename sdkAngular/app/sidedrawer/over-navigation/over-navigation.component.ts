@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild, Injectable, OnInit, ChangeDetectorRef } from "@angular/core";
+import { Component, ElementRef, ViewChild, Injectable, OnInit, ChangeDetectorRef, AfterViewInit } from "@angular/core";
 import { View } from "ui/core/view";
 import { RadSideDrawer } from "nativescript-telerik-ui-pro/sidedrawer";
 import { Page } from "ui/page";
@@ -9,17 +9,17 @@ import { RadSideDrawerComponent, SideDrawerType } from "nativescript-telerik-ui-
 
 @Component({
     moduleId: module.id,
-    selector: "tk-sidedrawer-getting-started",
-    templateUrl: 'getting-started.component.html',
-    styleUrls: ['getting-started.component.css']
+    selector: "tk-over-navigation-component",
+    templateUrl: 'over-navigation.component.html',
+    styleUrls: ['over-navigation.component.css']
 })
 @Injectable()
-export class SideDrawerGettingStartedComponent extends Observable implements OnInit {
+export class OverNavigationComponent extends Observable implements OnInit, AfterViewInit {
     constructor(private page: Page, private _changeDetectionRef: ChangeDetectorRef) {
         super();
     }
 
-    @ViewChild(RadSideDrawerComponent) public drawerComponent: RadSideDrawerComponent;
+    @ViewChild('mySideDrawer') public drawerComponent: RadSideDrawerComponent;
     private drawer: SideDrawerType;
 
     ngAfterViewInit() {
@@ -28,7 +28,7 @@ export class SideDrawerGettingStartedComponent extends Observable implements OnI
     }
 
     ngOnInit() {
-        this.set("mainContentText", "SideDrawer for NativeScript can be easily setup in the HTML definition of your page by defining tkDrawerContent and tkMainContent. The component has a default transition and position and also exposes notifications related to changes in its state. Swipe from left to open side drawer.");
+        this.set("mainContentText", "SideDrawer for NativeScript can be easily setup in the HTML definition of your Angular Component by defining tkDrawerContent for its drawer's content and setting all of the DrawerPage's content out of the RadSideDrawer.");
     }
 
     public openDrawer() {

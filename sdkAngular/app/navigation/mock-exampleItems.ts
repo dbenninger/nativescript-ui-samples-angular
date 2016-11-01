@@ -349,6 +349,11 @@ export var EXAMPLEITEMS: ExampleItem[] = [
                         "path": "SideDrawerEventsComponent",
                         "subItems": []
                     },
+                    {
+                        "title": "Drawer Over Navigation",
+                        "path": "OverNavigationComponent",
+                        "subItems": []
+                    }
                 ]
             },
             {
