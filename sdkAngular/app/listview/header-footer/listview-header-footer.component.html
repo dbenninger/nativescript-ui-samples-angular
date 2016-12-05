@@ -1,6 +1,6 @@
 <GridLayout>
     <!-- >> angular-listview-header-footer -->
-    <RadListView [items]="dataItems" tkExampleTitle tkToggleNavButton>
+    <RadListView [items]="dataItems" tkExampleTitle tkToggleNavButton selectionBehavior="Press" (itemSelected)="select($event)">
         <template tkListItemTemplate let-item="item">
             <StackLayout orientation="vertical">
                 <Label class="nameLabel" [text]="item.name"></Label>
